@@ -10,19 +10,19 @@ function getRandomInt(max) {
 return Math.ceil(Math.random() * max)
 }
 
-function writePassword() {
+function typePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", typePassword);
 
 
 function generatePassword() {
 //Allows users to choose a password at a certain length
-var passwordLength = prompt("How many characters would you like your password to be? (8 - 128)", '12')
+var passwordLength = prompt("Password length must be between (8 - 128)", '12');
 
 //Allows users to choose uppercase  
 var useUppercase = confirm("Would you like to include upppercase letters?")
@@ -39,7 +39,6 @@ var useSpecialChars = confirm("Would you like to include special characters?")
 var potentialChars = []
 if (useUppercase) {
     potentialChars = potentialChars.concat(uppercase)
-
 }
 if (useLowercase) {
     potentialChars = potentialChars.concat(lowercase)
@@ -62,5 +61,3 @@ for (var i = 0; i < passwordLength; i++) {
 return password
 
 }
-
-
